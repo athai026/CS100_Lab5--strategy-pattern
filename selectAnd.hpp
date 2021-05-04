@@ -1,3 +1,4 @@
+#ifndef __SELECT_AND_HPP__
 #define __SELECT_AND_HPP__
 #include <select.hpp>
 #include <cstring>
