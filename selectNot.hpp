@@ -15,6 +15,11 @@ public:
         select1 = _select;
      }
 
+    ~Select_Not() 
+    {
+            delete select1;
+    }
+
      virtual bool select(const Spreadsheet* sheet, int row) const
      {
           return !(select1->select(sheet, row));
