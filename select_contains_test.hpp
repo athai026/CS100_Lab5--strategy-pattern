@@ -77,5 +77,19 @@ TEST(SelectContains, Age_19) {
     EXPECT_EQ(out.str(), "Angel Adams 19 English \nAmy Adams 19 English \n");
 }
 
+TEST(SelectContains, Major_Film) {
+    Spreadsheet test_sheet;
+    test_sheet.set_column_names({"First", "Last", "Age", "Major"});
+    test_sheet.add_row({"Angel", "Adams", "19", "English"});
+    test_sheet.add_row({"Charles", "Cornell", "21", "Music"});
+    test_sheet.add_row({"Lauren", "Dang", "20", "Film"});
+    test_sheet.add_row({"Amy", "Adams", "19", "English"});
+ 
+    std::ostringstream out;
+    test_sheet.set_selection(new Select_Contains(&test_sheet, "Major", "Film"));
+    test_sheet.print_selection(out);
+    EXPECT_EQ(out.str(), "Lauren Dang 20 Film \n");
+}
+
 
 #endif //__SELECT_CONTAINS_TEST_HPP__
