@@ -7,18 +7,18 @@
 class Select_Not : public Select
 {
 protected:
-Select* select;
+Select* select1;
 public:
      Select_Not(Select* _select)
      {
-          delete select;
+        delete select1;  
 
-          select = _select;
+        select1 = _select;
      }
 
      virtual bool select() const
      {
-          return !select.select();
+          return !(select1->select());
      }
 };
 

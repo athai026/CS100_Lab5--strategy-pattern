@@ -20,8 +20,8 @@ public:
 
     virtual bool select() const
     {
-         if(select1.select() == select2.select()) {
-            return select1.select();
+         if(select1->select() == select2->select()) {
+            return select1->select();
         } else {return false;}
     }
 };

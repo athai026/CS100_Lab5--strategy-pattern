@@ -21,7 +21,7 @@ public:
 
      virtual bool select() const
      {
-          if(select1.select() == true || select2.select() == true)
+          if(select1->select() == true || select2->select() == true)
           {
                return true;
           } else { return false;}
