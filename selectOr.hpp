@@ -12,8 +12,6 @@ protected:
 public:
      Select_Or(Select* _select1, Select* _select2)
      {
-          delete select1;
-          delete select2;
 
           select1 = _select1;
           select2 = _select2;
