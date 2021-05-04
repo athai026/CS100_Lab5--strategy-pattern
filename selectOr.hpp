@@ -1,3 +1,4 @@
+#ifndef __SELECT_OR_HPP__
 #define __SELECT_OR_HPP__
 
 #include "select.hpp"
