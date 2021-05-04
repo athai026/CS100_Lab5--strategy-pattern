@@ -1,3 +1,4 @@
+#ifndef __SELECT_NOT_HPP__
 #define __SELECT_NOT_HPP__
 
 #include "select.hpp"
