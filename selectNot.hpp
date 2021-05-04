@@ -16,9 +16,9 @@ public:
         select1 = _select;
      }
 
-     virtual bool select() const
+     virtual bool select(const Spreadsheet* sheet, int row) const
      {
-          return !(select1->select());
+          return !(select1->select(sheet, row));
      }
 };
 
