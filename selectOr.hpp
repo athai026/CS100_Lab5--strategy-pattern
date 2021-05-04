@@ -19,9 +19,9 @@ public:
           select2 = _select2;
      }
 
-     virtual bool select() const
+     virtual bool select(const Spreadsheet* sheet, int row) const
      {
-          if(select1->select() == true || select2->select() == true)
+          if(select1->select(sheet, row) == true || select2->select(sheet, row) == true)
           {
                return true;
           } else { return false;}
