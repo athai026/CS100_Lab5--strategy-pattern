@@ -3,8 +3,7 @@
 
 #include "gtest/gtest.h"
 #include "selectContains.hpp"
-#include "spreadsheet.hpp"
-#include "spreadsheet.cpp"
+#include "header.hpp"
 
 
 TEST(SelectContains, First_Angel) {

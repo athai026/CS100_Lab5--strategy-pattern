@@ -1,11 +1,10 @@
-fndef __SELECT_OR_TEST_HPP__
+#ifndef __SELECT_OR_TEST_HPP__
 #define __SELECT_OR_TEST_HPP__
 
 #include "gtest/gtest.h"
 #include "selectContains.hpp"
 #include "selectOr.hpp"
-#include "spreadsheet.hpp"
-#include "spreadsheet.cpp"
+#include "header.hpp"
 
 TEST(SelectOr, First_Angel_Amy) {
     Spreadsheet test_sheet;
@@ -18,7 +17,7 @@ TEST(SelectOr, First_Angel_Amy) {
     std::ostringstream out;
     test_sheet.set_selection(new Select_Or(new Select_Contains(&test_sheet, "First", "Angel"), new Select_Contains(&test_sheet, "First", "Amy")));
     test_sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "Angel Adams 19 English \nAmy Adams 19 English");
+    EXPECT_EQ(out.str(), "Angel Adams 19 English \nAmy Adams 19 English \n");
 }
 
 TEST(SelectOr, Last_Cornell_Dang) {
@@ -32,7 +31,7 @@ TEST(SelectOr, Last_Cornell_Dang) {
     std::ostringstream out;
     test_sheet.set_selection(new Select_Or(new Select_Contains(&test_sheet, "Last", "Cornell"), new Select_Contains(&test_sheet, "Last", "Dang")));
     test_sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "Charles Cornell 21 Music \nLauren Dang 20 Film");
+    EXPECT_EQ(out.str(), "Charles Cornell 21 Music \nLauren Dang 20 Film \n");
 }
 
 TEST(SelectOr, Age_1_2) {
@@ -46,7 +45,7 @@ TEST(SelectOr, Age_1_2) {
     std::ostringstream out;
     test_sheet.set_selection(new Select_Or(new Select_Contains(&test_sheet, "Age", "1"), new Select_Contains(&test_sheet, "Age", "2")));
     test_sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "Angel Adams 19 English \nCharles Cornell 21 Music \nLauren Dang 20 Film \nAmy Adams 18 English");
+    EXPECT_EQ(out.str(), "Angel Adams 19 English \nCharles Cornell 21 Music \nLauren Dang 20 Film \nAmy Adams 18 English \n");
 }
 
 TEST(SelectOr, Major_E_u) {
@@ -60,7 +59,7 @@ TEST(SelectOr, Major_E_u) {
     std::ostringstream out;
     test_sheet.set_selection(new Select_Or(new Select_Contains(&test_sheet, "Major", "E"), new Select_Contains(&test_sheet, "Major", "u")));
     test_sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "Angel Adams 19 English \nAmy Adams 19 English \n");
+    EXPECT_EQ(out.str(), "Angel Adams 19 English \nCharles Cornell 21 Music \nAmy Adams 19 English \n");
 }
 
 TEST(SelectOr, Major_E_z) {
@@ -88,7 +87,7 @@ TEST(SelectOr, First___y) {
     std::ostringstream out;
     test_sheet.set_selection(new Select_Or(new Select_Contains(&test_sheet, "First", ""), new Select_Contains(&test_sheet, "First", "y")));
     test_sheet.print_selection(out);
-    EXPECT_EQ(out.str(), "Amy Adams 18 English \n");
+    EXPECT_EQ(out.str(), "Angel Adams 19 English \nCharles Cornell 21 Music \nLauren Dang 20 Film \nAmy Adams 18 English \n");
 }
 
 #endif //__SELECT_OR_TEST_HPP__

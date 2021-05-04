@@ -4,8 +4,7 @@
 #include "gtest/gtest.h"
 #include "selectContains.hpp"
 #include "selectAnd.hpp"
-#include "spreadsheet.hpp"
-#include "spreadsheet.cpp"
+#include "header.hpp"
 
 TEST(SelectAnd, First_Angel_Amy) {
     Spreadsheet test_sheet;
