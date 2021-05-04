@@ -4,7 +4,7 @@
 #include "select.hpp"
 #include <cstring>
 
-class Select_Not
+class Select_Not : public Select
 {
 protected:
 Select* select;
