@@ -18,10 +18,10 @@ public:
          select2 = _select2;
     }
 
-    virtual bool select() const
+    virtual bool select(const Spreadsheet* sheet, int row) const
     {
-         if(select1->select() == select2->select()) {
-            return select1->select();
+         if(select1->select(sheet, row) == select2->select(sheet, row)) {
+            return select1->select(sheet, row);
         } else {return false;}
     }
 };
