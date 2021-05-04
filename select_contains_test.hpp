@@ -21,5 +21,19 @@ TEST(SelectContains, First_Angel) {
     EXPECT_EQ(out.str(), "Angel Adams 19 English \n");
 }
 
+TEST(SelectContains, First_A) {
+    Spreadsheet test_sheet;
+    test_sheet.set_column_names({"First", "Last", "Age", "Major"});
+    test_sheet.add_row({"Angel", "Adams", "19", "English"});
+    test_sheet.add_row({"Charles", "Cornell", "21", "Music"});
+    test_sheet.add_row({"Lauren", "Dang", "20", "Film"});
+    test_sheet.add_row({"Amy", "Adams", "19", "English"});
+ 
+    std::ostringstream out;
+    test_sheet.set_selection(new Select_Contains(&test_sheet, "First", "A"));
+    test_sheet.print_selection(out);
+    EXPECT_EQ(out.str(), "Angel Adams 19 English \nAmy Adams 19 English \n");
+}
+
 
 #endif //__SELECT_CONTAINS_TEST_HPP__
