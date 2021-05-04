@@ -3,7 +3,7 @@
 #include "select.hpp"
 #include <cstring>
 
-class Select_And
+class Select_And : public Select
 {
 protected:
 Select* select1;
