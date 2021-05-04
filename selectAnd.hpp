@@ -11,8 +11,6 @@ Select* select2;
 public:
     Select_And(Select* _select1, Select* _select2)
     {
-         delete  select1;
-         delete  select2;
    
          select1 = _select1;
          select2 = _select2;

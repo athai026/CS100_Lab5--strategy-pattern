@@ -11,7 +11,6 @@ Select* select1;
 public:
      Select_Not(Select* _select)
      {
-        delete select1;  
 
         select1 = _select;
      }
